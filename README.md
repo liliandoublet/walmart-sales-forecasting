@@ -104,35 +104,6 @@ data/processed/    dim_stores.csv | fact_sales.csv | fact_features.csv
 
 ---
 
-## Comment reproduire
-
-### Prerequis
-
-```bash
-git clone https://github.com/liliandoublet/Power-Bi-showcase.git
-cd Power-Bi-showcase
-pip install -r requirements.txt
-```
-
-Telecharger les CSV Kaggle et les placer dans `data/raw/` : `stores.csv`, `train.csv`, `features.csv`, `test.csv`.
-
-### Execution dans l'ordre
-
-```bash
-# 1. Nettoyage, audit qualite et modele en etoile
-python src/clean.py
-
-# 2. Agregation en serie temporelle hebdomadaire
-python src/prepare_forecast.py
-
-# 3. Prevision SARIMA (environ 2 a 3 minutes)
-python src/forecast.py
-```
-
-Les fichiers produits dans `data/processed/` sont prets a etre charges dans Power BI (modele en etoile, relations sur Store et Date).
-
----
-
 ## Le dashboard (5 pages)
 
 | Page | Contenu |
